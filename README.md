@@ -1,7 +1,8 @@
  INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
-
-
-
+DATE:22-02-2024
+NAME:ETTA SUPRAJA
+ROLL NO:212223220022
+DEPARTMENT:INFORMATION TECHNOLOGY
 
 **AIM**:  To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
 
@@ -43,11 +44,8 @@ A potentiometer, informally a pot, is a three-terminal resistor with a sliding o
 Potentiometers are commonly used to control electrical devices such as volume controls on audio equipment. Potentiometers operated by a mechanism can be used as position transducers, for example, in a joystick. Potentiometers are rarely used to directly control significant power (more than a watt), since the power dissipated in the potentiometer would be comparable to the power in the controlled load
 CIRCUIT DIAGRAM
 
+![image](https://github.com/Ettasupraja/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/73a080b1-a588-47b0-baf0-248bc8da3be9)
 
-
-
-
-![image](https://user-images.githubusercontent.com/36288975/163530788-eec3cdc3-95e8-4d2d-8349-6d0ea4c9439c.png)
 
 **FIGURE -01
 **
@@ -67,26 +65,46 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
- 
+ int led=4;
+int sensorpot;
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
 
-
-
-
-
-
-
-
-
+void loop()
+{
+  sensorpot=analogRead(A0);
+  //Serial.print(("data=");
+  Serial.println(sensorpot);
+  delay(500);
+  if(sensorpot>500)
+  {
+    digitalWrite(led,HIGH);
+      delay(100);
+    digitalWrite(led,LOW);
+      delay(100);
+}
+  else
+  {
+    digitalWrite(led,LOW);
+  }
+}
+  
 **
 **Simulation output:** 
 **
 
 
-[My image](username.github.com/repository/img/image.jpg)
+![image](https://github.com/Ettasupraja/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/08b7df3a-ea22-4ea1-8038-e3379cd3756e)
 
 
+![image](https://github.com/Ettasupraja/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/ac19a02a-6842-4546-9492-79f40b344046)
 
+SENSOR MONITOR:
 
+![WhatsApp Image 2024-02-22 at 21 42 13_04b2a5f9](https://github.com/Ettasupraja/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/0f022410-d6f7-4418-9600-13e44d5438b6)
 
 
 
