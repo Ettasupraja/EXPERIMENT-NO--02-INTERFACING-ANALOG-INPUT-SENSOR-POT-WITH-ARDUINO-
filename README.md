@@ -1,6 +1,8 @@
  INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
-
-
+DATE:22-02-2024
+NAME:ETTA SUPRAJA
+ROLL NUMBER:212223220022
+DEPARTMENT:INFORMATION TECHNOLOGY
 
 
 **AIM**:  To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
@@ -44,10 +46,11 @@ Potentiometers are commonly used to control electrical devices such as volume co
 CIRCUIT DIAGRAM
 
 
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/ef2d0007-e9dd-440c-91dc-c1f6ab512006)
 
 
 
-![image](https://user-images.githubusercontent.com/36288975/163530788-eec3cdc3-95e8-4d2d-8349-6d0ea4c9439c.png)
+
 
 **FIGURE -01
 **
@@ -67,22 +70,40 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
- 
+int led=4;
+int sensorpot;
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
 
-
-
-
-
-
-
-
+void loop()
+{
+  sensorpot=analogRead(A0);
+  //Serial.print(("data=");
+  Serial.println(sensorpot);
+  delay(500);
+  if(sensorpot>500)
+  {
+    digitalWrite(led,HIGH);
+      delay(100);
+    digitalWrite(led,LOW);
+      delay(100);
+}
+  else
+  {
+    digitalWrite(led,LOW);
+  }
+} 
 
 **
 **Simulation output:** 
 **
 
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/16c5efa0-c89e-4707-92cf-99393ee6f724)
 
-[My image](username.github.com/repository/img/image.jpg)
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/39113048-61ff-4940-8615-a0a87c9cfe28)
 
 
 
