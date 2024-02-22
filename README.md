@@ -1,7 +1,8 @@
  INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
-
-
-
+DATE:22-02-2024
+NAME:ETTA SUPRAJA
+ROLL NO:212223220022
+DEPARTMENT:INFORMATION TECHNOLOGY
 
 **AIM**:  To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
 
@@ -42,12 +43,9 @@ General specifications of analog sensor
 A potentiometer, informally a pot, is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider. If only two terminals are used, one end and the wiper, it acts as a variable resistor or rheostat.
 Potentiometers are commonly used to control electrical devices such as volume controls on audio equipment. Potentiometers operated by a mechanism can be used as position transducers, for example, in a joystick. Potentiometers are rarely used to directly control significant power (more than a watt), since the power dissipated in the potentiometer would be comparable to the power in the controlled load
 CIRCUIT DIAGRAM
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/0538732d-9a0a-4869-a7ca-e42e7a2b67ae)
 
 
-
-
-
-![image](https://user-images.githubusercontent.com/36288975/163530788-eec3cdc3-95e8-4d2d-8349-6d0ea4c9439c.png)
 
 **FIGURE -01
 **
@@ -67,25 +65,49 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
- 
+ int led=4;
+int sensorpot;
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
 
-
-
-
-
-
-
-
+void loop()
+{
+  sensorpot=analogRead(A0);
+  //Serial.print(("data=");
+  Serial.println(sensorpot);
+  delay(500);
+  if(sensorpot>500)
+  {
+    digitalWrite(led,HIGH);
+      delay(100);
+    digitalWrite(led,LOW);
+      delay(100);
+}
+  else
+  {
+    digitalWrite(led,LOW);
+  }
+}
+  
 
 **
+
 **Simulation output:** 
 **
 
 
-[My image](username.github.com/repository/img/image.jpg)
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/8f9f2c52-163e-451a-b128-d777e4bb1873)
 
 
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/a8a0afbb-43da-42fc-b8cf-b83ae5268f8b)
 
+**SERIAL MONITOR:**
+
+
+![WhatsApp Image 2024-02-22 at 21 42 13_94f9e5f4](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/151641352/44af6264-b0c8-4e8f-b784-22a58adb7682)
 
 
 
